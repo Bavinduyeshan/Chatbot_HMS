@@ -42,16 +42,16 @@ namespace Chatbot_HMS
 
             if (userMessage.Length == 0) return;
 
-            // Display user's message
+           
             AddOutgoing(userMessage);
 
-            // Clear the input box
+            
             txtmessage.Text = string.Empty;
 
-            // Get chatbot response
+            
             string reply = GetResponse(userMessage);
 
-            // Display chatbot's reply
+            
             AddIncoming(reply);
         }
 
@@ -62,13 +62,13 @@ namespace Chatbot_HMS
         /// <returns>Response from the chatbot.</returns>
         string GetResponse(string message)
         {
-            // Check for an exact match in the predefined responses
+           
             if (responses.TryGetValue(message.ToLower(), out string response))
             {
                 return response;
             }
 
-            // Default response for unrecognized inputs
+          
             return "I'm sorry, I don't understand that. Can you rephrase?";
         }
 
